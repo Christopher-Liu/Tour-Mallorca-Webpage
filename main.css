@@ -1,0 +1,64 @@
+body{
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.active{
+  font-weight: 800;
+}
+
+footer{
+  background: #f9e890;
+  height: 15vh;
+  padding: 15px;
+  margin: 10px 0 0 0;
+}
+
+footer h2{
+  font-family: 'Pacifico', cursive;
+}
+
+.footer-item{
+  text-align: right;
+}
+
+
+
+/* Main page (index.html) */
+body h1, body h3, #logo{
+  font-weight: 600;
+}
+
+#main-content{
+  text-align: center;
+  margin-top: 35%;
+}
+
+#main-content h1, #logo{
+  font-family: 'Pacifico', cursive;
+}
+
+#main-page-jumbo{
+  background-image: url(mallorcaPic.JPG);
+  background-size: cover;
+  height: 100vh;
+}
+
+
+
+/* About page (about.html) */
+.about-body{
+  padding-top: 70px;
+}
+
+.about-row-title{
+  text-align: center;
+}
+
+.about-blurb{
+  font-size: 15px;
+}
+
+hr{
+  height: 5px;
+}
