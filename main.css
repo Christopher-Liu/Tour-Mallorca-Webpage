@@ -39,7 +39,7 @@ body h1, body h3, #logo{
 }
 
 #main-page-jumbo{
-  background-image: url(mallorcaPic.JPG);
+  background-image: url(images/mallorcaPic.JPG);
   background-size: cover;
   height: 100vh;
 }
