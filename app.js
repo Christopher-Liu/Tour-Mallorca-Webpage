@@ -4,7 +4,8 @@ var mongoose   = require('mongoose');
 var Vacation   = require('./models/vacations.js');
 var Comment    = require('./models/comments.js');
 
-var app        = express();
+var app = express();
+
 
 // Have to set the username and password before connection to the server works
 var username = '';
@@ -18,12 +19,18 @@ app.set('view engine', 'ejs');
 
 
 
+
 // =========
 // Routes
 // =========
 app.get('/', function(req, res){
-  res.send('Hello World')
+  res.render('index.ejs');
 });
+
+app.get('/about', function(req, res){
+  res.render('about.ejs');
+});
+
 
 app.listen(1337, function() {
   console.log('Server is now listening');
