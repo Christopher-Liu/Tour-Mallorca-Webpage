@@ -10,8 +10,25 @@
     </div>
   </div>
 
-
   <div class="container">
+
+
+    <div class='index-packages-section row'>
+      <% vacations.forEach(function(result) { %>
+        <div class='col-xs-12 col-sm-4'>
+          <div class='thumbnail'>
+            <img src=' <%= result.image %> '>
+          </div>
+          <div class='caption'>
+            <p> <%= result.description.slice(0,75) + '...' %> </p>
+            <p>
+              <a href='/vacations/<%= result._id %>'>See More</a>
+            </p>
+          </div>
+        </div>
+      <% }); %>
+
+    </div>
 
 
 
@@ -34,7 +51,6 @@
       </div>
 
 
-
       <div class="row">
         <div class="col-lg-12">
           <h1 class="about-row-title">Natural Resort</h2>
@@ -50,7 +66,6 @@
           </div>
         </div>
       </div>
-
 
 
       <div class="row">
