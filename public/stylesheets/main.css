@@ -48,20 +48,35 @@ footer .logo,
   height: 65vh;
 }
 
-.about-body{
-  padding-top: 70px;
+
+.homepage-packages-section{
+  margin: 40px 0 0 0;
+  padding: 5px 5px;
 }
 
-.about-row-title{
+.caption a{
+  float: right;
+}
+
+
+.row-title{
+  font-size: 2.5em;
   text-align: center;
+}
+
+.about-body{
+  padding-top: 70px;
 }
 
 .about-blurb{
   font-size: 15px;
 }
 
-hr{
-  height: 5px;
+
+
+/* Index page */
+.index-body{
+  margin-top: 80px;
 }
 
 
