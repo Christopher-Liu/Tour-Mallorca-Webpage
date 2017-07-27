@@ -1,18 +1,33 @@
 <% include ./partials/header.ejs %>
 
-<div class='index-body container'>
+<div class='index-body'>
 
-  <% vacations.forEach(function(vacation) { %>
-    <div class='index-block row'>
-      <img src='<%= vacation.image %>' class='col-sm-3'>
-      <div class='col-sm-9'>
-        <p class='index-description'><%= vacation.description.slice(0,400) + '...' %></p>
-        <p>
-          <a href='/vacations/<%= vacation._id  %>'>See More</a>
-        </p>
+  <div class='index-jumbo'>
+  </div>
+
+
+
+  <div class='container'>
+
+    <p class='row-title'>Your Mallorca Adventure Awaits</p>
+
+    <% vacations.forEach(function(vacation) { %>
+      <div class='index-block row'>
+        <img src='<%= vacation.image %>' class='col-sm-3'>
+        <div class='col-sm-9 index-block-content'>
+          <p class='index-block-title'><%= vacation.name %></p>
+          <p class='index-description'><%= vacation.description.slice(0,400) + '...' %></p>
+          <p>
+            <a href='/tours/<%= vacation._id  %>'>See More</a>
+          </p>
+        </div>
       </div>
-    </div>
-  <% }); %>
+
+      <hr class='index-hr'>
+    <% }); %>
+
+  </div>
+
 
 </div>
 

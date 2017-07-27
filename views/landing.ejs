@@ -1,8 +1,8 @@
 <% include ./partials/header.ejs %>
 
 
-  <div id="main-page-jumbo">
-    <div class="container">
+  <div class='jumbo'>
+    <div class='container'>
         <div class="jumbotron-content">
           <p class="jumbotron-title logo">¡Hola Mallorca!</p>
           <p class="jumbotron-description">Discover the hidden gems of Mallorca</p>
@@ -20,6 +20,7 @@
           <div class='thumbnail'>
             <img src=' <%= result.image %> '>
           </div>
+
           <div class='caption'>
             <p> <%= result.description.slice(0,75) + '...' %> </p>
             <p>

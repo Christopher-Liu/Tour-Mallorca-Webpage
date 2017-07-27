@@ -70,7 +70,7 @@ app.get('/', function(req, res){
 });
 
 
-app.get('/vacations', function(req, res){
+app.get('/tours', function(req, res){
   Vacation.find({}, function(err, allVacations) {
     if (err) {
       console.log(err);
@@ -81,7 +81,7 @@ app.get('/vacations', function(req, res){
 });
 
 
-app.get('/vacations/:id', function(req, res){
+app.get('/tours/:id', function(req, res){
   Vacation.findById(req.params.id, function(err, requestedPackage) {
     if (err) {
       console.log(err);
