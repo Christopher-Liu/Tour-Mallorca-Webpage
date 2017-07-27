@@ -3,8 +3,8 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
-.active{
-  font-weight: 800;
+.logo{
+  font-family: 'Pacifico', cursive;
 }
 
 footer{
@@ -14,8 +14,9 @@ footer{
   margin: 10px 0 0 0;
 }
 
-footer h2{
-  font-family: 'Pacifico', cursive;
+footer .logo,
+.navbar-header .logo{
+  font-size: 1.75em;
 }
 
 .footer-item{
@@ -24,29 +25,29 @@ footer h2{
 
 
 
-/* Main page (index.html) */
-body h1, body h3, #logo{
-  font-weight: 600;
-}
-
-#main-content{
+/*     Main page (index.ejs)    */
+.jumbotron-content{
+  margin-top: 20%;
   text-align: center;
-  margin-top: 35%;
+  background:rgba(255,255,255,0.5);
+  border-radius: 2.5%;
 }
 
-#main-content h1, #logo{
-  font-family: 'Pacifico', cursive;
+.jumbotron-title{
+  font-size: 2.5em;
+}
+
+.jumbotron-description{
+  font-size: 1.75em;
 }
 
 #main-page-jumbo{
-  background-image: url(/img/mallorcaPic.JPG);
+  margin-top: 25px;
+  background-image: url(/img/mallorca-jumbo-cropped.jpg);
   background-size: cover;
-  height: 100vh;
+  height: 65vh;
 }
 
-
-
-/* About page (about.html) */
 .about-body{
   padding-top: 70px;
 }
@@ -61,4 +62,22 @@ body h1, body h3, #logo{
 
 hr{
   height: 5px;
+}
+
+
+
+
+/*    Media Queries   */
+@media (min-width: 1024px){
+  .jumbotron-content{
+    margin-top: 15%;
+    text-align: left;
+    width: 50%;
+    padding: 10px 10px;
+  }
+
+  .jumbotron-title,
+  .jumbotron-description{
+    text-align: center;
+  }
 }
