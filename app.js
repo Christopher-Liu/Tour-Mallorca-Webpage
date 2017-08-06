@@ -10,11 +10,13 @@ var app = express();
 // Setting up the ports to work wtih being deployed on Heroku
 var port = process.env.PORT || 1337;
 
+
 // Have to set the username and password before connection to the server works
 var username = process.env.mongoUsername;
 var password = process.env.mongoPass;
 // Connecting to the database servers on MongoDB Atlas
 mongoose.connect('mongodb://' + username + ':' + password + '@cluster0-shard-00-00-cmlex.mongodb.net:27017,cluster0-shard-00-01-cmlex.mongodb.net:27017,cluster0-shard-00-02-cmlex.mongodb.net:27017/mallorca?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
+
 
 /*
 // Code for seeding the database each time we start the server (will only be here during development)
