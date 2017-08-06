@@ -1,6 +1,7 @@
 body{
   color: black;
   font-family: 'Poppins', sans-serif;
+  margin-top: 50px;
 }
 
 .logo{
@@ -42,22 +43,24 @@ footer .logo,
 }
 
 .jumbo{
-  margin-top: 50px;
   background-image: url(/img/soller-jumbo-cropped.jpg);
   background-size: cover;
   height: 65vh;
 }
-
 
 .homepage-packages-section{
   margin: 40px 0 0 0;
   padding: 5px 5px;
 }
 
+.homepage-button{
+  margin: 40px 0;
+  text-align: center;
+}
+
 .caption a{
   float: right;
 }
-
 
 .row-title{
   font-size: 2.5em;
@@ -65,7 +68,7 @@ footer .logo,
 }
 
 .about-body{
-  padding-top: 70px;
+  margin-top: 40px;
 }
 
 .about-blurb{
@@ -79,16 +82,15 @@ footer .logo,
   background-image: url(/img/mallorca-jumbo-cropped.jpg);
   background-size: cover;
   height: 45vh;
-  margin: 0 0 20px 0;
 
 }
 
 .index-body{
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .index-block{
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
 }
 
 .index-block-content{
@@ -103,6 +105,8 @@ footer .logo,
 .index-hr{
   font-weight: 600;
 }
+
+
 
 
 /*    Media Queries   */
