@@ -8,8 +8,8 @@ var app = express();
 
 
 // Have to set the username and password before connection to the server works
-var username = '';
-var password = '';
+var username = process.env.mongoUsername;
+var password = process.env.mongoPass;
 // Connecting to the database servers on MongoDB Atlas
 mongoose.connect('mongodb://' + username + ':' + password + '@cluster0-shard-00-00-cmlex.mongodb.net:27017,cluster0-shard-00-01-cmlex.mongodb.net:27017,cluster0-shard-00-02-cmlex.mongodb.net:27017/mallorca?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
 
@@ -92,6 +92,10 @@ app.get('/tours/:id', function(req, res){
 });
 
 
-app.listen(1337, function() {
+
+// Short-circuit code to properly assign the port to listen on depending on if I am deploying the app or deveoping locally
+var port = process.env.PORT || 1337;
+
+app.listen(port, function() {
   console.log('Server is now listening');
 });
