@@ -7,6 +7,9 @@ var Comment    = require('./models/comments.js');
 var app = express();
 
 
+// Setting up the ports to work wtih being deployed on Heroku
+var port = process.env.PORT || 1337;
+
 // Have to set the username and password before connection to the server works
 var username = process.env.mongoUsername;
 var password = process.env.mongoPass;
@@ -91,10 +94,6 @@ app.get('/tours/:id', function(req, res){
   });
 });
 
-
-
-// Setting up the ports to work wtih being deployed on Heroku
-var port = process.env.PORT;
 
 app.listen(port, function() {
   console.log('Server is now listening');

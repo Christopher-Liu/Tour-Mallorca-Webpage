@@ -1,6 +1,6 @@
 {
   "name": "tour-mallorca",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Full stack project centered around creating a mock travel agency webpage",
   "main": "app.js",
   "scripts": {
