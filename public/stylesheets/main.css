@@ -8,20 +8,16 @@ body{
   font-family: 'Pacifico', cursive;
 }
 
+/*  Footer Items  */
 footer{
   background: #f9e890;
-  height: 20vh;
-  padding: 15px;
+  padding: 20px 0;
   margin: 10px 0 0 0;
 }
 
 footer .logo,
 .navbar-header .logo{
   font-size: 1.75em;
-}
-
-.footer-item{
-  text-align: right;
 }
 
 
