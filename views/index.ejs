@@ -7,27 +7,72 @@
 
 
   <div class='container'>
-    <div class='index-body'>
+    <div class='row'>
+      <div class='index-sidebar well col-xs-12 col-md-3'>
+        <p>Find Your Perfect Trip</p>
 
-    <p class='row-title'>Your Mallorca Adventure Awaits</p>
+        <form>
+          <p>Travel Dates</p>
+          <div class='form-group'>
+            <label>From: </label>
+            <input type='date' class='form-control'>
+          </div>
+          <div class='form-group'>
+            <label>To: </label>
+            <input type='date' class='form-control'>
+          </div>
 
-    <% vacations.forEach(function(vacation) { %>
-      <div class='index-block row'>
-        <img src='<%= vacation.image %>' class='col-sm-3'>
-        <div class='col-sm-9 index-block-content'>
-          <p class='index-block-title'><%= vacation.name %></p>
-          <p class='index-description'><%= vacation.description.slice(0,400) + '...' %></p>
-          <p>
-            <a href='/tours/<%= vacation._id  %>'>See More</a>
-          </p>
-        </div>
+          <div class='form-group'>
+            <label>Location</label>
+            <div>
+              <input type='radio'>
+              <label>Coves del Drac</label>
+            </div>
+            <div>
+              <input type='radio'>
+              <label>Palma</label>
+            </div>
+            <div>
+              <input type='radio'>
+              <label>Port de Sóller</label>
+            </div>
+            <div>
+              <input type='radio'>
+              <label>Porto Cristo</label>
+            </div>
+            <div>
+              <input type='radio'>
+              <label>Sóller</label>
+            </div>
+          </div>
+
+
+
+          <button type='submit' class='btn btn-primary'>Search</button>
+        </form>
       </div>
 
-      <hr class='index-hr'>
-    <% }); %>
 
+      <div class='index-body col-xs-12 col-md-9'>
+        <p class='row-title'>Your Mallorca Adventure Awaits</p>
+
+        <% vacations.forEach(function(vacation) { %>
+          <div class='index-block row'>
+            <img src='<%= vacation.image %>' class='col-sm-3'>
+            <div class='col-sm-9 index-block-content'>
+              <p class='index-block-title'><%= vacation.name %></p>
+              <p class='index-description'><%= vacation.description.slice(0,400) + '...' %></p>
+              <p>
+                <a href='/tours/<%= vacation._id  %>'>See More</a>
+              </p>
+            </div>
+          </div>
+
+          <hr class='index-hr'>
+        <% }); %>
+
+      </div>
     </div>
-
   </div>
 
 
