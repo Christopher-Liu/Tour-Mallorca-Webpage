@@ -93,8 +93,8 @@ app.get('/tours/:id', function(req, res){
 
 
 
-// Short-circuit code to properly assign the port to listen on depending on if I am deploying the app or deveoping locally
-var port = process.env.PORT || 1337;
+// Setting up the ports to work wtih being deployed on Heroku
+var port = process.env.PORT;
 
 app.listen(port, function() {
   console.log('Server is now listening');
