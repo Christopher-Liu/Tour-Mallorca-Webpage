@@ -7,47 +7,61 @@ var Comment    = require('./models/comments.js');
 var app = express();
 
 
-// Setting up the ports to work wtih being deployed on Heroku
+// Setting up the ports. Using short circuiting to first check if there is a port stored in the environment variable (for Heroku), else it defaults to a localhost port on 1337
 var port = process.env.PORT || 1337;
 
 
-// Have to set the username and password before connection to the server works
-var username = process.env.mongoUsername;
-var password = process.env.mongoPass;
+// Username and password variables to connect to the MongoDB Atlas database
+// They are currently stored as Heroku environment variables, hence being references to process.env
+username = process.env.mongoUsername;
+password = process.env.mongoPass;
+
 // Connecting to the database servers on MongoDB Atlas
 mongoose.connect('mongodb://' + username + ':' + password + '@cluster0-shard-00-00-cmlex.mongodb.net:27017,cluster0-shard-00-01-cmlex.mongodb.net:27017,cluster0-shard-00-02-cmlex.mongodb.net:27017/mallorca?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
 
 
 /*
-// Code for seeding the database each time we start the server (will only be here during development)
+// Code for seeding the database should we ever need to erase saved data and re-seed the database
 var data = [
+    {   name: 'Port de Sóller',
+        image: '/img/tourImages/portDeSoller.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod dolor quis metus mollis ultricies. Pellentesque porta, mauris sit amet ullamcorper tincidunt, lorem diam elementum libero, tempus rhoncus orci libero in ex. Etiam luctus ultrices neque eu consequat. Nullam condimentum vehicula sodales. Integer ullamcorper neque sed turpis mattis, eu porta lorem maximus. Vestibulum augue mauris, vehicula nec nisi nec, porta bibendum nibh.'
+
+    },
     {
-        name: 'Cloud Rest 2',
-        image: '/img/placeholder.png',
+        name: 'Coves del Drac',
+        image: '/img/tourImages/covesDelDrach.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod dolor quis metus mollis ultricies. Pellentesque porta, mauris sit amet ullamcorper tincidunt, lorem diam elementum libero, tempus rhoncus orci libero in ex. Etiam luctus ultrices neque eu consequat. Nullam condimentum vehicula sodales. Integer ullamcorper neque sed turpis mattis, eu porta lorem maximus. Vestibulum augue mauris, vehicula nec nisi nec, porta bibendum nibh.'
     },
     {
-        name: 'Dope Rest 2',
-        image: '/img/placeholder.png',
+        name: 'Porto Cristo',
+        image: '/img/tourImages/portoCristo.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod dolor quis metus mollis ultricies. Pellentesque porta, mauris sit amet ullamcorper tincidunt, lorem diam elementum libero, tempus rhoncus orci libero in ex. Etiam luctus ultrices neque eu consequat. Nullam condimentum vehicula sodales. Integer ullamcorper neque sed turpis mattis, eu porta lorem maximus. Vestibulum augue mauris, vehicula nec nisi nec, porta bibendum nibh.'
     },
     {
-        name: 'Sick Rest 2',
-        image: '/img/placeholder.png',
+        name: 'Església de Sant Bartomeu',
+        image: '/img/tourImages/sollerCathedral.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod dolor quis metus mollis ultricies. Pellentesque porta, mauris sit amet ullamcorper tincidunt, lorem diam elementum libero, tempus rhoncus orci libero in ex. Etiam luctus ultrices neque eu consequat. Nullam condimentum vehicula sodales. Integer ullamcorper neque sed turpis mattis, eu porta lorem maximus. Vestibulum augue mauris, vehicula nec nisi nec, porta bibendum nibh.'
     }
 ];
 
+Vacation.remove({}, function(err, removedResults) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('removed vacations');
 
-data.forEach(function(seed){
-  Vacation.create(seed, function(err, result) {
-    if (err) {
-      console.log(err);
-    } else {
-      result.save();
-      console.log('added in vacation')
-    }
-  });
+    data.forEach(function(seed){
+      Vacation.create(seed, function(err, result) {
+        if (err) {
+          console.log(err);
+        } else {
+          result.save();
+          console.log('added in vacation')
+        }
+      });
+    });
+  }
 });
 */
 
